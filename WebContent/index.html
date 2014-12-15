@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en" ng-app="expensesApp">
+<head>
+  <meta charset="utf-8">
+  <title ng-bind-template="Expenses: {{query}}">My HTML File</title>
+  <link rel="stylesheet" href="includes/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="includes/angular/angular.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers/controllers.js"></script>
+</head>
+<body>
+	<header ng-controller="navigationCtrl">
+		<ul class="nav nav-tabs nav-pills">
+			<li ng-class="{ active: isActive('/merchants')}"><a href="#/merchants">Merchants</a></li>
+			<li ng-class="{ active: isActive('/category')}"><a href="#/category">Categories</a></li>
+			<li ng-class="{ active: isActive('/expenses')}"><a href="#/expenses">Expenses</a></li>
+		</ul>
+	</header>
+	<div ng-view></div>
+</body>
+</html>

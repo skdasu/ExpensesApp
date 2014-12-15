@@ -1,0 +1,91 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">&nbsp;</div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+            <!-- category panel start -->
+            <div class="panel panel-default">
+                <div class="panel-heading">Panel heading without title</div>
+                <div class="panel-body"  style="height: 400px;overflow: auto;">
+                    <table id="categoryTable" class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Category ID</th>
+                                <th>Category ID</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="cat in categories | filter:query | orderBy:orderProp">
+                                <td>{{cat.categoryID}}</td>
+                                <td>{{cat.categoryName}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- ccategory panel end -->
+        </div>
+        <div class="col-offset-2"></div>
+        <div class="col-md-5">
+            <!-- sub category panel start -->
+            <div class="panel panel-default">
+                    <div class="panel-heading">Panel heading without title</div>
+                    <div class="panel-body"  style="height: 400px;overflow: auto;">
+                        <table id="subCategoryTable" class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Category ID</th>
+                                    <th>Sub Category ID</th>
+                                    <th>Sub Category Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="cat in subCategories">
+                                    <td>{{cat.categoryID}}</td>
+                                    <td>{{cat.subCategoryID}}</td>
+                                    <td>{{cat.subCategoryName}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            <!-- sub category panel end -->
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-5">
+            <!-- category panel start -->
+            <div class="panel panel-default">
+                <div class="panel-heading">Panel heading without title</div>
+                <div class="panel-body"  style="height: 200px;overflow: auto;">
+                    <form name="addCategoryForm" ng-submit="addCategoryForm.$valid && addCategory()" novalidate>
+                        Category Name: <input type="text" id="categoryName" name="categoryName" ng-model="newCategory.name" required>
+                        <input type="submit" value="Submit" id="submitCategoryBtn" />
+                    </form>
+                </div>
+            </div>
+            <!-- ccategory panel end -->
+        </div>
+        <div class="col-offset-2"></div>
+        <div class="col-md-5">
+            <!-- sub category panel start -->
+            <div class="panel panel-default">
+                <div class="panel-heading">Panel heading without title</div>
+                <div class="panel-body"  style="height: 200px;overflow: auto;">
+                    <form name="addSubCategoryForm" ng-submit="addSubCategoryForm.$valid && addSubCategory()" novalidate>
+                        Sub Category Name: 
+                        <select ng-model="newSubCategory.categoryID" ng-options="item.categoryID as item.categoryName for item in categories" required>
+                            <option>--</option>
+                        </select>
+                        <input type="text" id="subCategoryName" name="subCategoryName" ng-model="newSubCategory.subCategoryName" required>
+                    <input type="submit" value="Submit" id="submitSubCategoryBtn" />
+                </form>
+                </div>
+            </div>
+            <!-- sub category panel end -->
+        </div>
+    </div>
+
+</div>

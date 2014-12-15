@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>ExpensesApp</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+    <servlet-name>MerchantServlet</servlet-name>
+    <servlet-class>com.expenses.servlets.MerchantServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MerchantServlet</servlet-name>
+    <url-pattern>/getMerchants</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AddMerchant</servlet-name>
+    <servlet-class>com.expenses.servlets.AddMerchant</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddMerchant</servlet-name>
+    <url-pattern>/addMerchants</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>CategoryServlet</servlet-name>
+    <servlet-class>com.expenses.servlets.CategoryServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CategoryServlet</servlet-name>
+    <url-pattern>/getCategories</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AddCategory</servlet-name>
+    <servlet-class>com.expenses.servlets.AddCategoryServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddCategory</servlet-name>
+    <url-pattern>/addCategory</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SubCategoryServlet</servlet-name>
+    <servlet-class>com.expenses.servlets.SubCategoryServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SubCategoryServlet</servlet-name>
+    <url-pattern>/getSubCategories</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AddSubCategoryServlet</servlet-name>
+    <servlet-class>com.expenses.servlets.AddSubCategoryServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddSubCategoryServlet</servlet-name>
+    <url-pattern>/addSubCategories</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ExpensesServlet</servlet-name>
+    <servlet-class>com.expenses.servlets.ExpensesServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ExpensesServlet</servlet-name>
+    <url-pattern>/getExpenses</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>AddExpenseServlet</servlet-name>
+    <servlet-class>com.expenses.servlets.AddExpenseServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddExpenseServlet</servlet-name>
+    <url-pattern>/addExpense</url-pattern>
+  </servlet-mapping>
+  
+</web-app>
