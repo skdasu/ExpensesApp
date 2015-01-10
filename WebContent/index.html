@@ -9,6 +9,7 @@
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
   <script src="js/app.js"></script>
   <script src="js/controllers/controllers.js"></script>
+  <script src="js/controllers/addExpensesController.js"></script>
 </head>
 <body>
 	<header ng-controller="navigationCtrl">
@@ -16,6 +17,7 @@
 			<li ng-class="{ active: isActive('/merchants')}"><a href="#/merchants">Merchants</a></li>
 			<li ng-class="{ active: isActive('/category')}"><a href="#/category">Categories</a></li>
 			<li ng-class="{ active: isActive('/expenses')}"><a href="#/expenses">Expenses</a></li>
+			<li ng-class="{ active: isActive('/addExpenses')}"><a href="#/addExpenses">Add Expenses</a></li>
 		</ul>
 	</header>
 	<div ng-view></div>

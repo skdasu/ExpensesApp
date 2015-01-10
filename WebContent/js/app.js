@@ -20,6 +20,10 @@ expensesApp.config(['$routeProvider',
         templateUrl: 'partials/expenses/category-list.html',
         controller: 'CategoryListCtrl'
       }).
+      when('/addExpenses', {
+          templateUrl: 'partials/expenses/add-expenses.html',
+          //controller: 'AddExpenseListCtrl'
+        }).
       when('/merchants', {
         templateUrl: 'partials/expenses/list-merchants.html',
         controller: 'MerchantListCtrl'

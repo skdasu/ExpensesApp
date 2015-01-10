@@ -1,0 +1,98 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">&nbsp;</div>
+    </div>
+    <div class="row">
+        <form class="form-horizontal" name="expenseForm" ng-submit="expenseForm.$valid" novalidate>
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label for="inputDate" class="col-sm-2 control-label">Date</label>
+                    <div class="col-sm-10">
+                        <input type="date" class="form-control" ng-model="entry.dateOfPurchase" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="selectMerchant" class="col-sm-2 control-label">Merchant</label>
+                    <div class="col-sm-10">
+                        <select ng-model="entry.merchantID" ng-options="item.merchantID as item.merchantName for item in merchants" required class="form-control">
+                            <option>--</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="selectCategory" class="col-sm-2 control-label">Category</label>
+                    <div class="col-sm-10">
+                        <select ng-model="entry.categoryID" ng-options="item.categoryID as item.categoryName for item in categories" required class="form-control">
+                            <option>--</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="selectSubCategory" class="col-sm-2 control-label">SubCategory</label>
+                    <div class="col-sm-10">
+                        <select ng-model="entry.subCategoryID" ng-options="item.subCategoryID as item.subCategoryName for item in subCategories" required class="form-control">
+                            <option>--</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPlace" class="col-sm-2 control-label">Place</label>
+                    <div class="col-sm-10">
+                        <input type="text" ng-model="entry.place" class="form-control" placeholder="Place" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <div class="checkbox">
+                            <label> <input type="checkbox" ng-model="entry.isOrganic" ng-true-value="true" ng-false-value="false">Organic</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label for="inputItemName" class="col-sm-3 control-label">ItemName</label>
+                    <div class="col-sm-9">
+                        <input type="text" ng-model="entry.itemName" class="form-control" placeholder="Item Names" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputQuantity" class="col-sm-3 control-label">Quantity</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" ng-pattern="/\d+\.?\d*/" ng-model="entry.quantity" placeholder="Quantity" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="selectUnits" class="col-sm-3 control-label">Units</label>
+                    <div class="col-sm-9">
+                        <select ng-model="entry.units" required class="form-control" required>
+                            <option value=''>Select Units</option>
+                            <option value='lb'>lb</option>
+                            <option value='ea'>ea</option>
+                            <option value='gal'>gal</option>
+                            <option value='grms'>grms</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPrice" class="col-sm-3 control-label">Price</label>
+                    <div class="col-sm-9">
+                        <input type="number" ng-pattern="/\d+\.?\d*/" ng-model="entry.price" ng-change="calculateRate()" class="form-control" placeholder="Price" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputRate" class="col-sm-3 control-label">Rate</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" ng-model="entry.rate" ng-disabled="true" placeholder="Rate" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-9">
+                        <input type="submit" value="Submit" id="addExpenseBtn" />
+                        <!-- <button id="addExpenseBtn" type="submit" class="btn btn-default">Add Expense</button> -->
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
