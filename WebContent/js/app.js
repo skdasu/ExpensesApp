@@ -6,7 +6,8 @@ var expensesApp = angular.module('expensesApp', [
   'navigationController',
   'expenseSectionControllers',
   'categoriesSectionControllers',
-  'merchantSectionControllers'
+  'merchantSectionControllers',
+  'addExpenseSectionControllers'
 ]);
  
 expensesApp.config(['$routeProvider',
@@ -22,7 +23,7 @@ expensesApp.config(['$routeProvider',
       }).
       when('/addExpenses', {
           templateUrl: 'partials/expenses/add-expenses.html',
-          //controller: 'AddExpenseListCtrl'
+          controller: 'AddExpenseListCtrl'
         }).
       when('/merchants', {
         templateUrl: 'partials/expenses/list-merchants.html',
